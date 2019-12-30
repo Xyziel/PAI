@@ -1,0 +1,153 @@
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 60px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-size: inherit;
+    background: transparent linear-gradient(180deg, #1D91DE , #291289);
+}
+
+.mainLabel {
+    width: 100%;
+    font-family: Arial Rounded MT, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #12e6ee;
+    margin-top: 2em;
+}
+
+.logoAndForm {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2em;
+}
+
+.logo > img {
+    align-self: center;
+    width: 2.3em;
+    height: 2.3em;
+}
+
+.logo > span {
+    font-family: NirmalaUI, sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #b2bcc7;
+    margin-top: 0.2em;
+}
+
+.lowerGroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    padding-bottom: 0.5em;;
+}
+
+.lowerGroup > img {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 5px;
+}
+
+.lowerGroup > span {
+    font-family: Arial Rounded MT, sans-serif;
+    font-weight: bold;
+    font-size: 0.6em;
+}
+
+.leftText {
+    margin-right: 5%;
+    color: #e88e3e;
+}
+
+.middleText {
+    color: #19ee12;
+}
+
+.rightText {
+    color: #dfe60d;
+}
+.rightPhoto {
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 729px){
+    body {
+        height: unset;
+    }
+
+    .logoAndForm {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .lowerGroup {
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .lowerGroup > img {
+        margin: 10px 0 0 0;
+    }
+
+    .lowerGroup > span {
+        margin: 10px 0 0 0;
+    }
+}
+
+@media only screen and (max-device-width: 729px) {
+    body {
+        height: unset;
+    }
+
+    .mainLabel {
+        margin-top: 0.5em;
+    }
+
+    .logoAndForm {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .lowerGroup {
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .lowerGroup > img {
+        margin: 10px 0 0 0;
+    }
+
+    .lowerGroup > span {
+        margin: 10px 0 0 0;
+    }
+}

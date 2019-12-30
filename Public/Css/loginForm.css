@@ -1,0 +1,103 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif ;
+    color: #cfd9e2;
+}
+
+.form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form > form span :not(.message), span  {
+    font-size: 0.2em;
+    margin-bottom: 0.2em;
+    color: #cfd9e2;
+}
+
+.form > form input {
+    align-items: center;
+}
+
+.form input {
+    width: 15em;
+    border-radius: 21px;
+    border: solid 1px #bce0fd;
+    padding: 0.4em 0.6em 0.4em;
+}
+
+input[type="text"] {
+    font-size: 0.3em;
+}
+
+input[type="email"] {
+    font-size: 0.3em;
+}
+
+input[type="password"] {
+    font-size: 0.3em;
+}
+
+.form > form button {
+    border-radius: 21px;
+    background-color: #2699fb;
+    border: none;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
+
+.fa-arrow-right {
+    color: #cfd9e2;
+    font-size: 1.7em;
+    padding: 0.4em 0 0.4em;
+}
+
+.email {
+    margin-top: 1.5em;
+}
+
+.password {
+    margin-top: 2em;
+}
+
+.repeatPassword {
+    margin-top: 2em;
+}
+
+.info {
+    margin-top: 0.5em;
+}
+
+.form > span > a {
+    color: #cfd9e2;
+}
+
+.form > span > a:hover {
+    color: blueviolet;
+}
+
+.text {
+    text-align: center;
+}
+
+.createAccount {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.login {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.form > button:hover {
+    filter: brightness(80%);
+}
+
+.message {
+    font-size: 0.25em;
+    padding-top: 1em;
+    text-align: center;
+    color: #ed1c1c;
+}

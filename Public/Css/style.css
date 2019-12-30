@@ -1,0 +1,189 @@
+body {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 1000px;
+}
+
+header {
+    position: relative;
+    background-color: #262626;
+    width: 100%;
+    font-size: 20px;
+    height: 64px;
+    z-index: 999;
+}
+
+header > img {
+    float: left;
+    width: 2.2em;
+    height: 2.2em;
+    padding: 0.5em 0.5em;
+}
+
+header > span {
+    float: left;
+    font-size: 2.4em;
+    color: white;
+    font-family: Nirmala UI, sans-serif;
+    font-weight: bold;
+}
+
+.menuTrigger {
+    float: right;
+    font-size: 2em;
+    background: none;
+    border: none;
+    margin: 0.2em;
+}
+
+.fa-bars {
+    cursor: pointer;
+    color: white;
+}
+
+.fa-bars:hover {
+    color: #b3c6ff;
+}
+
+.navBarShow {
+    opacity: 1;
+    transition: opacity 240ms ease;
+    pointer-events: auto;
+}
+
+.navBar {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0 20px;
+    background: #262626;
+    list-style-type: none;
+}
+
+nav li  {
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    font-family: Nirmala UI, sans-serif;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #b3c6ff;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon:hover {
+    color: #b3c6ff;
+    fill: #b3c6ff;;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    z-index: 999;
+}
+
+.footer > a {
+    padding: 0 2vw;
+    text-decoration: none;
+    color: white;
+    font-family: Nirmala UI, sans-serif;
+}
+
+.footer > a:hover {
+    color: #b3c6ff;
+}
+
+.fa-arrow-up {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.container {
+    min-height: 100%;
+}
+
+@media only screen and (min-width: 1180px) {
+
+    .menuTrigger {
+        display: none;
+    }
+
+    .navBar {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav ul {
+        background: none;
+        opacity: 1;
+        padding: 0.5em 0 0 13em;
+    }
+
+    nav {
+        top: 0;
+        left: 0;
+    }
+
+    nav li {
+        float: left;
+        padding: 6px 1vw 0 1vw;
+        display: inline-block;
+        text-align: left;
+    }
+
+    nav a {
+        display: inline-block;
+    }
+
+    .gallery {
+        padding-left: 7vw;
+    }
+
+    .logOut {
+        position: absolute;
+        right: 0;
+    }
+
+    .profileIcon {
+        margin-right: 5em;
+        position: absolute;
+        right: 0;
+
+    }
+
+    .icon {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}

@@ -1,0 +1,98 @@
+.container {
+    font-size: 20px;
+    background: transparent linear-gradient(180deg, #1D91DE , #291289);
+}
+
+.profilePhoto {
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-portrait {
+    font-size: 200px;
+    color: lightblue;
+    opacity: 20%;
+    margin-bottom: 10px;
+}
+
+.infoContainer {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #2699FB;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2em;
+
+}
+
+.infoContainer  input, textarea, select {
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+    height: 2em;
+    width: 15em;
+    margin-bottom: 3em;
+    margin-top: 4px;
+    border: 2px solid #BCE0FD;
+}
+
+.infoContainer span {
+    font-size: 0.8em;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: column;;
+}
+
+.description {
+    resize: none;
+    height: 10em;
+    font-family: Verdana, sans-serif;
+}
+
+.choosePic {
+    padding-left: 4em;
+}
+
+.saveButton {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.container button {
+    border-radius: 10px;
+    border: 2px solid #BCE0FD;
+    width: 6em;
+    height: 2em;
+    font-weight: bold;
+    background-color: white;
+    color: #4b5961;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #dfe8ed;
+}
+
+@media only screen and (max-device-width: 700px) {
+
+    .infoContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-device-width: 701px) {
+    .container {
+        min-width: 500px;
+    }
+}

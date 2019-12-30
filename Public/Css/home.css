@@ -1,0 +1,55 @@
+.container {
+    background-image: url("../Images/Football-Law-1920x1080.jpg");
+    font-size: 40px;
+}
+
+.textAndButton {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    margin-left: 3em;
+    align-items: center;
+    min-width: unset;
+}
+
+.text {
+    color: #d6cda6;
+    top: 28%;
+    font-family: Arial Rounded MT, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.button {
+    width: 10em;
+    top: 50%;
+    background-color: #8fc3db;
+    color: white;
+    font-size: 1.1em;
+    font-family: Gill Sans MT, sans-serif;
+    border: none;
+    border-radius: 30px;
+    padding: 0.3em 1em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #73b8d9;
+}
+
+@media only screen and (max-width: 1050px) {
+    .textAndButton {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .button {
+        width: 90vw;
+    }
+}
