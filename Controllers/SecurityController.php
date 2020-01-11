@@ -11,18 +11,14 @@ class SecurityController extends AppController {
 
         if ($this->isPost()) {
 
-            $database = new Database();
+            $userRepository = new UserRepository();
 
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            if ($database->isUserRegistered($email, $password)) {
+            if ($userRepository->isUserRegistered($email, $password)) {
 
                 $_SESSION['id'] = $email;
-                $_SESSION['user'] = new User();
-
-                $_SESSION['user']->setEmail($email);
-                $_SESSION['user']->setPassword($password);
                 $url = "http://$_SERVER[HTTP_HOST]/";
                 header("Location: {$url}?page=home");
             } else {
@@ -58,7 +54,7 @@ class SecurityController extends AppController {
                 } else if ($password != $repeatPassword) {
                     $this->renderPage('registration', ['messages' => 'Hasła muszą być takie same!']);
                 } else {
-                    $userRepository->addUser($email, $password);
+                    $userRepository->addUser($email, md5($password));
                     $_SESSION['registration'] = ['messages' => 'Rejestracja przebiagła pomyślnie!', 'color' => '#19ee12'];
                     $url = "http://$_SERVER[HTTP_HOST]/";
                     header("Location: {$url}?page=login");
