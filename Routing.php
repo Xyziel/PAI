@@ -2,6 +2,8 @@
 
 require_once 'Controllers/SecurityController.php';
 require_once 'Controllers/BoardController.php';
+require_once 'Controllers/UploadController.php';
+require_once 'Controllers/MatchesController.php';
 
 class Routing {
 
@@ -29,6 +31,30 @@ class Routing {
             'profile' => [
                 'controller' => 'BoardController',
                 'action' => 'loadProfile'
+            ],
+            'upload' => [
+                'controller' => 'UploadController',
+                'action' => 'upload'
+            ],
+            'matches' => [
+                'controller' => 'MatchesController',
+                'action' => 'loadMatches'
+            ],
+            'matches_refresh' => [
+                'controller' => 'MatchesController',
+                'action' => 'refreshMatches'
+            ],
+            'add_to_match' => [
+                'controller' => 'MatchesController',
+                'action' => 'addToMatch'
+            ],
+            'create_match' => [
+                'controller' => 'MatchesController',
+                'action' => 'addMatch'
+            ],
+            'match_details' => [
+                'controller' => 'MatchesController',
+                'action' => 'showMatchDetails'
             ]
         ];
     }
@@ -45,5 +71,4 @@ class Routing {
             $object->$action();
         }
     }
-
 }
