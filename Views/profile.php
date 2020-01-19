@@ -8,28 +8,19 @@
     <link rel="stylesheet" href="../Public/Css/style.css">
     <link rel="stylesheet" href="../Public/Css/profile.css">
     <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>
-    <script>
-    function showNavBar() {
-        var x = document.getElementById("navBar");
-        if (x.className === "navBar") {
-            x.className += "Show";
-        }
-        else {
-            x.className = "navBar";
-        }
-    }
-</script>
+    <script src="../Public/js/navBar.js"></script>
+
 </head>
 
 <body>
-<header>
-    <img src="../Public/Images/ball.svg" alt="No photo">
+<header class="header">
+    <img class="logo" src="../Public/Images/ball.svg" alt="No photo">
     <span class="mixBall">MixBall</span>
     <button class="menuTrigger" onclick="showNavBar()"><i class="fas fa-bars"></i></button>
     <nav id="navBar" class="navBar">
         <ul>
-            <li><a href="home.php">Strona główna</a></li>
-            <li><a href="">Mecze</a></li>
+            <li><a href="?page=home">Strona główna</a></li>
+            <li><a href="?page=matches">Mecze</a></li>
             <li><a href="">Sędziowie</a></li>
             <li><a href="">Twoje mecze</a></li>
             <li class="gallery"><a href="">Galeria</a></li>
@@ -40,11 +31,22 @@
     </nav>
 </header>
 
-<div class="container">
-    <form action="?page=profile" method="POST">
+<div class="mainContainer">
+    <form action="?page=upload" method="POST" ENCTYPE="multipart/form-data">
         <div class="profilePhoto">
-            <i class="fas fa-portrait"></i>
-            <input type="file" name="avatar"  class="choosePic" accept="image/png, image/jpg">
+            <?php if ($photo == "") {
+                      echo '<i class="fas fa-portrait"></i>';
+                  }
+                  else {
+                      echo "<img src='../Public/Images/uploads/$photo' height='250' id=photo>";
+                  }
+            ?>
+            <input type="file" name="photo"  class="choosePic" accept="image/png, image/jpg, image/jpeg">
+            <span class="fileError"><?php
+                if (isset($fileError)) {
+                    print "$fileError";
+                } ?>
+            </span>
         </div>
         <div class="infoContainer">
             <div class="leftSide">
@@ -53,17 +55,17 @@
                 <input type="text" name="name" value="<?php
                     if (isset($name)) {
                         print $name;
-                    } ?>">
+                    } ?>" required>
                 <span>Nazwisko</span>
                 <input type="text" name="surname" value="<?php
                     if (isset($surname)) {
                         print $surname;
-                    } ?>">
+                    } ?>" required>
                 <span>Wiek</span>
                 <input type="number" name="age" value="<?php
                     if (isset($age)) {
                         print $age;
-                    } ?>">
+                    } ?>" required>
             </div>
             <div class="rightSide">
                 <span>Lepsza noga</span>
@@ -81,8 +83,7 @@
                 <textarea name="description" datatype="text" class="description" maxlength="400"><?php
                     if (isset($description)) {
                         print $description;
-                    } ?>
-                </textarea>
+                    } ?></textarea>
             </div>
         </div>
         <div class="saveButton">

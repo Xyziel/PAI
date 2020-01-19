@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div class="container">
+<div class="mainContainer">
     <span class="mainLabel">Dołącz do drużyny i graj!</span>
     <div class="logoAndForm">
         <div class="logo">

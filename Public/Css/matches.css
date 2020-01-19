@@ -1,0 +1,133 @@
+.mainContainer {
+    background-image: url("../Images/pitch2.jpg");
+    display: marker;
+    flex-direction: column;
+}
+
+.infoContainer {
+    padding-top: 7em;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.table {
+    opacity: 95%;
+}
+
+.tableScroll {
+    max-height: 800px;
+    overflow: auto;
+}
+
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.tableSpan {
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-family: "Arial Rounded MT", sans-serif;
+    color: #debc12;
+    font-size: 2em;
+    text-shadow: 2px 2px #454545;
+}
+
+th:not(.hAddress) {
+    text-align: center;
+}
+
+td:not(.address) {
+    text-align: center;
+}
+
+.address {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.city {
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.players {
+    width: 113px;
+}
+
+.date {
+    width: 170px;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+.id {
+    width: 50px;
+}
+
+#joinButton {
+    float: right;
+
+}
+
+#detailButton {
+    float: right;
+    margin-right: 20px;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 5%;
+    align-items: center;
+}
+
+.rightSide span {
+    position: relative;
+    top: 20%;
+    text-align: center;
+    color: #ebc73b;
+    font-size: 2.5em;
+    font-family: "Berlin Sans FB", sans-serif;
+    text-shadow: 2px 2px #878787;
+}
+
+.rightSide a {
+    position: relative;
+    top: 23%;
+}
+
+.rightSide button {
+    background: #ad9039;
+    width: 11em;
+    height: 2em;
+    border-radius: 20px;
+    border: none;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
+
+.rightSide button:hover {
+    background: #ba9b3c;
+}
+
+.fa-arrow-down {
+    position: relative;
+    top: 21%;
+    font-size: 2em;
+    color: #ebc73b;
+}
