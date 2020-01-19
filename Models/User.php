@@ -11,7 +11,7 @@ class User {
     private $description;
     private $photo;
 
-    public function __construct(string $email, string $name, string $surname, $age, $leg, string $club, string $description,string $photo)
+    public function __construct($email, $name = "", $surname = "", $age = 0, $leg = 1, $club = "", $description = "", $photo = "")
     {
         $this->email = $email;
         $this->name = $name;
@@ -27,11 +27,11 @@ class User {
         return $this->email;
     }
 
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->name;
     }
 
-    public function getSurname(): string {
+    public function getSurname(): ?string {
         return $this->surname;
     }
 
@@ -39,7 +39,7 @@ class User {
         return $this->age;
     }
 
-    public function getLeg(): string {
+    public function getLeg(): int {
         return $this->leg;
     }
 
