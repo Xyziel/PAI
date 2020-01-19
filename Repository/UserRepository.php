@@ -139,4 +139,25 @@ class UserRepository extends Repository {
             die();
         }
     }
+
+    public function isPhotoSet($email) {
+        $pdo = $this->database->connect();
+
+        try {
+
+            $stmt = $pdo->prepare("SELECT user_details.photo FROM user_details WHERE id_user_details = (SELECT id_user_details FROM user WHERE email=:email)");
+
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            $photo = $stmt->fetch(PDO::FETCH_ASSOC);
+            $pdo = null;
+
+            return ($photo['photo'] != "") ? true : false;
+        } catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
+            die();
+        }
+    }
 }

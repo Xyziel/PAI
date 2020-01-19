@@ -67,7 +67,6 @@ class SecurityController extends AppController {
 
     public function logout() {
 
-//        session_unset();
         session_destroy();
         $_SESSION['id'] = null;
         $this->renderPage('login');

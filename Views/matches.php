@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="../Public/Css/style.css">
     <link rel="stylesheet" href="../Public/Css/matches.css">
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
-<!--    <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>-->
+    <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="../Public/js/matchTable.js"></script>
@@ -24,8 +23,8 @@
     <nav id="navBar" class="navBar">
         <ul>
             <li><a href="?page=home">Strona główna</a></li>
-            <li><a href="">Mecze</a></li>
-            <li><a href="">Sędziowie</a></li>
+            <li><a href="?page=matches">Mecze</a></li>
+            <li><a href="?page=referees">Sędziowie</a></li>
             <li><a href="">Twoje mecze</a></li>
             <li class="gallery"><a href="">Galeria</a></li>
             <li class="about"><a href="">O aplikacji</a></li>
@@ -43,20 +42,21 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th class="hAddress">Adres</th>
-                        <th>Liczba osób</th>
+                        <th class="hCity">Miasto</th>
+                        <th class="hAddress">Ulica</th>
                         <th>Data</th>
-                        <th>Miasto</th>
+                        <th>Liczba osób</th>
                     </tr>
                     </thead>
                     <tbody class="matchesList">
                     <?php foreach ($matches as $match): ?>
                         <tr>
                             <td class="id"><?= $match['id_match']?></td>
-                            <td class="address"><?= $match['street']." ".$match['number'] ?></td>
-                            <td class="players"><?= $match['numberOfPlayers'].'/'.$match['players'] ?></td>
-                            <td class="date"><?= $match['date']." ".$match['time'] ?></td>
                             <td class="city"><?= $match['city'] ?></td>
+                            <td class="address"><?= $match['street']." ".$match['number'] ?></td>
+                            <td class="date"><?= $match['date']." ".$match['time'] ?></td>
+                            <td class="players"><?= $match['numberOfPlayers'].'/'.$match['players'] ?></td>
+
                         </tr>
                     <?php endforeach ?>
                     </tbody>
@@ -66,7 +66,6 @@
                 <button class="btn btn-secondary" type="submit" onclick="getMatches()">Odśwież</button>
                 <button class="btn btn-secondary" id="joinButton" type="submit" onclick="joinTeam()" disabled>Dołącz</button>
                 <button class="btn btn-secondary" id="detailButton" type="button" data-toggle="modal" data-target="#myModal" onclick="showDetails()" disabled>Szczegóły</button>
-
             </div>
         </div>
         <div class="rightSide">
@@ -100,8 +99,8 @@
 </div>
 
 <div class="footer">
-    <a href="home.php">Strona główna</a>
-    <a href="">Kontakt</a>
+    <a href="?page=home">Strona główna</a>
+    <a href="?page=contact">Kontakt</a>
     <a href="">O aplikacji</a>
     <i class="fas fa-arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></i>
 </div>

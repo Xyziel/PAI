@@ -1,18 +1,4 @@
-// function select() {
-//     var table = document.getElementById("table");
-//
-//     for(var i = 1; i < table.rows.length; i++)
-//     {
-//         table.rows[i].onclick = function () {
-//             $("tr").css("background", "none");
-//             $(this).css("background", "#919191");
-//             document.getElementById("joinButton").disabled = false;
-//         }
-//     }
-// }
-
-$(document).ready(function() {
-
+function select() {
     var table = document.getElementById("table");
 
     for(var i = 1; i < table.rows.length; i++)
@@ -24,7 +10,9 @@ $(document).ready(function() {
             document.getElementById("detailButton").disabled = false;
         }
     }
-});
+}
+
+$(document).ready((fun) => select());
 
 function getMatches() {
     const apiUrl = "http://localhost:1083";
@@ -40,20 +28,7 @@ function getMatches() {
 
         document.getElementById("joinButton").disabled = true;
         document.getElementById("detailButton").disabled = true;
-        $(document).ready(function() {
-
-            var table = document.getElementById("table");
-
-            for(var i = 1; i < table.rows.length; i++)
-            {
-                table.rows[i].onclick = function () {
-                    $("tr").css("background", "none");
-                    $(this).css("background", "#919191");
-                    document.getElementById("joinButton").disabled = false;
-                    document.getElementById("detailButton").disabled = false;
-                }
-            }
-        });
+        $(document).ready((fun) => select());
 
         res.forEach(el => {
             if ((el.number) == null) {
@@ -61,10 +36,11 @@ function getMatches() {
             }
             $list.append(`<tr>
                         <td class="id">${el.id_match}</td>
-                        <td class="address">${el.street} ${el.number}</td>
-                        <td class="players">${el.numberOfPlayers}/${el.players}</td>
-                        <td class="date">${el.date} ${el.time}</td>
                         <td class="city">${el.city}</td>
+                        <td class="address">${el.street} ${el.number}</td>
+                        <td class="date">${el.date} ${el.time}</td>
+                        <td class="players">${el.numberOfPlayers}/${el.players}</td>
+                        
                         </tr>`);
         });
         console.log($list);
@@ -134,7 +110,7 @@ function showDetails() {
     .done((match) => {
         for (var i = 0; i < match.players; i++) {
             if (match[i] != null) {
-                $playersList.append(`<span>${match[i].name} ${match[i].surname}</span><br>`)
+                $playersList.append(`<span>${match[i].name} ${match[i].surname}  <button><i class="fas fa-user"></i></button></span><br>`)
             }
         }
         $matchDetails.append(`<span>Id: ${match.id_match}</span><br>
@@ -145,4 +121,8 @@ function showDetails() {
                             <span>Liczba osób: ${match.numberOfPlayers}/${match.players}</span><br>
                             <span>Zapisane osoby:</span><br>`)
     });
+}
+
+function showProfile(id) {
+
 }

@@ -1,0 +1,76 @@
+.mainContainer {
+    background-image: url("../Images/background-cement-concrete-paint-242236.jpg");
+}
+
+.mainLabel {
+    position: relative;
+    font-size: 4em;
+    font-family: "Arial Rounded MT", sans-serif;
+    padding-top: 1em;
+    text-align: center;
+}
+
+.mainLabel span {
+    color: #dff261;
+    text-shadow: 1px 1px #919191;
+}
+
+.formAndPic {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding-top: 4em;
+    left: 10%;
+    justify-content: space-evenly;
+}
+
+.picture img {
+    width: 30em;
+    height: 30em;
+}
+
+.matchForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.matchForm span {
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-family: "Calibri", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #6b6b6b;
+}
+
+.matchForm input, select{
+    height: 30px;
+    width: 300px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: 1px #6b6b6b solid;
+    padding-left: 7px;
+    font-family: "Calibri", sans-serif;
+}
+
+.matchForm button {
+    align-self: center;
+    margin-top: 1em;
+    font-size: 1em;
+    font-family: "Arial Rounded MT", sans-serif;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.info {
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.matchForm button:hover {
+    background: #1D90DE;
+}

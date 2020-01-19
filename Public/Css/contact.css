@@ -1,0 +1,45 @@
+.mainContainer {
+    background-image: url("../Images/abstract-antique-backdrop-background-129731.jpg");
+}
+
+.labels {
+    padding-top: 2em;
+    text-align: center;
+}
+
+#stmtUp {
+    font-family: "Arial Rounded MT", sans-serif;
+    font-size: 3.5em;
+    color: #aaaaaa;
+    text-shadow: 2px 2px #6b6b6b;
+}
+
+#stmtDown {
+    font-family: "Nirmala UI", sans-serif;
+    font-size: 1.5em;
+    color: #ba9b3c;
+    text-shadow: 1px 1px #f2e355;
+}
+
+.contAndForm {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2em;
+    justify-content: center;
+}
+
+#cont {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2em;
+}
+
+#form {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+#message {
+    resize: none;
+}

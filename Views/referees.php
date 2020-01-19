@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
+    <title>Sędziowie</title>
     <link rel="stylesheet" href="../Public/Css/style.css">
-    <link rel="stylesheet" href="../Public/Css/home.css">
+    <link rel="stylesheet" href="../Public/Css/referees.css">
     <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>
     <script src="../Public/js/navBar.js"></script>
 </head>
@@ -20,7 +20,7 @@
         <ul>
             <li><a href="?page=home">Strona główna</a></li>
             <li><a href="?page=matches">Mecze</a></li>
-            <li><a href="">Sędziowie</a></li>
+            <li><a href="?page=referees">Sędziowie</a></li>
             <li><a href="">Twoje mecze</a></li>
             <li class="gallery"><a href="">Galeria</a></li>
             <li class="about"><a href="">O aplikacji</a></li>
@@ -31,10 +31,17 @@
 </header>
 
 <div class="mainContainer">
-    <div class="textAndButton">
-        <span class="text">Poczuj się jak gwiazdy światowej piłki<br>i zagraj swój własny mecz!</span>
-        <a href="?page=matches"><button class="button" type="submit">Dołącz już teraz!</button></a>
-
+    <div class="mainLabel">
+        <span>Poczuj się jak na prawdziwym meczu<br>i zagraj razem z sędzią!</span>
+    </div>
+    <span>Dostępni sędziowie:</span>
+    <div class="refereeProfiles">
+        <?php foreach ($referees as $referee): ?>
+            <div>
+              <img src="../Public/Images/referees/<?= $referee['photo'].".jpg"?>"><br>
+              <span><?= $referee["name"].' ', $referee["surname"]?></span><br>
+            </div>
+        <?php endforeach ?>
     </div>
 </div>
 

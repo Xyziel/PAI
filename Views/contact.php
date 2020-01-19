@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
+    <title>Kontakt</title>
     <link rel="stylesheet" href="../Public/Css/style.css">
-    <link rel="stylesheet" href="../Public/Css/home.css">
+    <link rel="stylesheet" href="../Public/Css/contact.css">
     <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>
     <script src="../Public/js/navBar.js"></script>
 </head>
@@ -31,10 +31,21 @@
 </header>
 
 <div class="mainContainer">
-    <div class="textAndButton">
-        <span class="text">Poczuj się jak gwiazdy światowej piłki<br>i zagraj swój własny mecz!</span>
-        <a href="?page=matches"><button class="button" type="submit">Dołącz już teraz!</button></a>
-
+    <div class="labels">
+        <span id="stmtUp">Masz pytanie?</span><br><br>
+        <span id="stmtDown">Wyślij wiadomość, a my postaramy się odpowiedzieć tak szybko jak to tylko możliwe</span>
+    </div>
+    <div class="contAndForm">
+        <div id="cont">
+            <span>Kontakt</span><br>
+            <span>mixballcompany@gmail.com</span>
+        </div>
+        <div id="form">
+            <span>Temat:</span>
+            <input type="text" name="topic">
+            <span>Twoja wiadomość:</span>
+            <textarea id="message" name="message" datatype="text"></textarea>
+        </div>
     </div>
 </div>
 

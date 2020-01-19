@@ -21,7 +21,7 @@
         <ul>
             <li><a href="?page=home">Strona główna</a></li>
             <li><a href="?page=matches">Mecze</a></li>
-            <li><a href="">Sędziowie</a></li>
+            <li><a href="?page=referees">Sędziowie</a></li>
             <li><a href="">Twoje mecze</a></li>
             <li class="gallery"><a href="">Galeria</a></li>
             <li class="about"><a href="">O aplikacji</a></li>
@@ -93,8 +93,8 @@
 </div>
 
 <div class="footer">
-    <a href="home.php">Strona główna</a>
-    <a href="">Kontakt</a>
+    <a href="?page=home">Strona główna</a>
+    <a href="?page=contact">Kontakt</a>
     <a href="">O aplikacji</a>
     <i class="fas fa-arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></i>
 </div>

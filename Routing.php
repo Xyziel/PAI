@@ -55,6 +55,14 @@ class Routing {
             'match_details' => [
                 'controller' => 'MatchesController',
                 'action' => 'showMatchDetails'
+            ],
+            'referees' => [
+                'controller' => 'BoardController',
+                'action' => 'loadReferees'
+            ],
+            'contact' => [
+                'controller' => 'BoardController',
+                'action' => 'loadContact'
             ]
         ];
     }

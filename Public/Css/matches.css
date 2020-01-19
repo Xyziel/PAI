@@ -41,11 +41,11 @@
     text-shadow: 2px 2px #454545;
 }
 
-th:not(.hAddress) {
+th:not(.hAddress):not(.hCity) {
     text-align: center;
 }
 
-td:not(.address) {
+td:not(.address):not(.city) {
     text-align: center;
 }
 
@@ -131,3 +131,15 @@ td:not(.address) {
     font-size: 2em;
     color: #ebc73b;
 }
+
+.modal-body {
+    overflow: auto;
+}
+
+.fa-user {
+    color: black;
+    box-sizing: unset;
+    width: 20px;
+    height: 20px;
+}
+

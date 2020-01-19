@@ -1,0 +1,62 @@
+.mainContainer {
+    background-image: url("../Images/abstract-ancient-antique-art-235985.jpg");
+}
+
+.mainLabel {
+    padding-top: 2em;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.mainLabel span {
+    font-size: 5em;
+    font-family: "Gill Sans MT", sans-serif;
+    color: #4083c2;
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+
+}
+
+.mainContainer > span {
+    font-size: 2em;
+    margin-left: 20%;
+    font-family: "Arial Rounded", sans-serif;
+    font-weight: bold;
+    color: cornsilk;
+    text-shadow: 1px 1px grey;
+}
+
+.refereeProfiles {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    left: 15%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    color: #2e2e2e;
+}
+
+.refereeProfiles > div {
+    margin: 1.5em 5em;
+    text-align: center;
+    text-shadow: 1px 1px darkgoldenrod;
+}
+
+.fa-portrait {
+    font-size: 10em;
+    margin-bottom: 10px;
+}
+
