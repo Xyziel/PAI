@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logowanie</title>
-    <link rel="stylesheet" href="../Public/Css/loginTemp.css">
-    <link rel="stylesheet" href="../Public/Css/loginForm.css">
+    <link rel="stylesheet" href="../../Public/Css/loginTemp.css">
+    <link rel="stylesheet" href="../../Public/Css/loginForm.css">
     <script src="https://kit.fontawesome.com/953716a7e0.js" crossorigin="anonymous"></script>
 </head>
 
@@ -15,7 +15,7 @@
     <span class="mainLabel">Dołącz do drużyny i graj!</span>
     <div class="logoAndForm">
         <div class="logo">
-            <img src="../Public/Images/ball.svg" alt="No photo">
+            <img src="../../Public/Images/ball.svg" alt="No photo">
             <span class="appName">MixBall</span>
         </div>
         <div class="form">
@@ -41,11 +41,11 @@
     </div>
 
     <div class="lowerGroup">
-        <img class="leftPhoto" src="../Public/Images/man-user.svg" alt="No photo">
+        <img class="leftPhoto" src="../../Public/Images/man-user.svg" alt="No photo">
         <span class="leftText">Załóż konto</span>
-        <img class="middlePhoto" src="../Public/Images/soccer.svg" alt="No photo">
+        <img class="middlePhoto" src="../../Public/Images/soccer.svg" alt="No photo">
         <span class="middleText">Zapisz się na mecz</span>
-        <img class="rightPhoto" src="../Public/Images/football-player-attempting-to-kick-ball.svg" alt="No photo">
+        <img class="rightPhoto" src="../../Public/Images/football-player-attempting-to-kick-ball.svg" alt="No photo">
         <span class="rightText">Przyjeżdżaj i graj</span>
     </div>
 </div>

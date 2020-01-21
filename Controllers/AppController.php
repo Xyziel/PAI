@@ -17,7 +17,7 @@ class AppController {
     }
 
     protected function renderPage(string $page = null, array $variables = []) {
-        $pagePath = $page ? dirname(__DIR__).'/Views/'. $page.'.php' : '';
+        $pagePath = $page ? dirname(__DIR__).'/Views/'.get_class($this).'/'. $page.'.php' : '';
         if(file_exists($pagePath)){
             extract($variables);
             include $pagePath;

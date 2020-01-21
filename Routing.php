@@ -4,6 +4,7 @@ require_once 'Controllers/SecurityController.php';
 require_once 'Controllers/BoardController.php';
 require_once 'Controllers/UploadController.php';
 require_once 'Controllers/MatchesController.php';
+require_once 'Controllers/AdminController.php';
 
 class Routing {
 
@@ -63,6 +64,26 @@ class Routing {
             'contact' => [
                 'controller' => 'BoardController',
                 'action' => 'loadContact'
+            ],
+            'send_email' => [
+                'controller' => 'BoardController',
+                'action' => 'sendEmail'
+            ],
+            'about' => [
+                'controller' => 'BoardController',
+                'action' => 'loadAbout'
+            ],
+            'admin_panel' => [
+                'controller' => 'AdminController',
+                'action' => 'loadAdminPanel'
+            ],
+            'admin_get_users' => [
+                'controller' => 'AdminController',
+                'action' => 'getUsers'
+            ],
+            'admin_delete_user' => [
+                'controller' => 'AdminController',
+                'action' => 'deleteUser'
             ]
         ];
     }

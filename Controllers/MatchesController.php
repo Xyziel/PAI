@@ -18,7 +18,8 @@ class MatchesController extends AppController {
             $this->renderPage('matches', ['matches' => $matches]);
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
 
 
@@ -34,6 +35,7 @@ class MatchesController extends AppController {
         for ($i = 0; $i < count($matches); $i++) {
             $matches[$i]['numberOfPlayers'] =  $matchesRepository->getNumberOfPlayersInTeam($matches[$i]['id_match']);
         }
+
         echo $matches ? json_encode($matches) : '';
     }
 
@@ -81,7 +83,8 @@ class MatchesController extends AppController {
             $this->renderPage('createMatch', ['referees' => $refereeRepository->getReferees()]);
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
 
 

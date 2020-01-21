@@ -59,7 +59,8 @@ class UploadController extends AppController {
             header("Location: {$url}?page=profile");
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
 
 

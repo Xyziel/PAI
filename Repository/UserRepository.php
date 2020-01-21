@@ -55,7 +55,7 @@ class UserRepository extends Repository {
         $pdo = $this->database->connect();
 
         try {
-            $stmt = $pdo->prepare("INSERT INTO user(id_user_details, id_role, email, password) VALUES (0, 1, :email, :password)");
+            $stmt = $pdo->prepare("INSERT INTO user(id_user_details, id_role, email, password) VALUES (null, 1, :email, :password)");
 
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':password', $password, PDO::PARAM_STR);
@@ -77,12 +77,9 @@ class UserRepository extends Repository {
             $stmt = $pdo->prepare("SELECT id_user_details FROM user WHERE email=:email");
             $stmt->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
             $stmt->execute();
-            $idUserDetails = $stmt->fetch();
-            if ($idUserDetails['id_user_details'] == 0) {
+            $idUserDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($idUserDetails['id_user_details'] == null) {
                 $stmt = $pdo->prepare("INSERT INTO user_details(name, surname, age, id_leg, club, description, photo) VALUES (:name, :surname, :age, :leg, :club, :description, :photo)");
-                $addId = $pdo->prepare("UPDATE user SET id_user_details=(SELECT MAX(id_user_details)+1 FROM user) WHERE email=:email");
-                $addId->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
-                $addId->execute();
             } else {
                 $stmt = $pdo->prepare("UPDATE user_details SET name=:name, surname=:surname, age=:age, id_leg=:leg, club=:club, description=:description, photo=:photo WHERE id_user_details = (SELECT id_user_details FROM user WHERE email=:email)");
                 $stmt->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
@@ -105,6 +102,12 @@ class UserRepository extends Repository {
             $stmt->bindParam(':photo', $photo, PDO::PARAM_STR);
 
             $stmt->execute();
+
+            if($idUserDetails['id_user_details'] == null) {
+                $addId = $pdo->prepare("UPDATE user SET id_user_details=(SELECT MAX(id_user_details) FROM user_details) WHERE email=:email");
+                $addId->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
+                $addId->execute();
+            }
 
             $pdo = null;
 
@@ -155,6 +158,67 @@ class UserRepository extends Repository {
             $pdo = null;
 
             return ($photo['photo'] != "") ? true : false;
+        } catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
+            die();
+        }
+    }
+
+    public function isAdmin($email): bool {
+        $pdo = $this->database->connect();
+
+        try {
+
+            $stmt = $pdo->prepare("SELECT user.id_role FROM user WHERE email=:email");
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $id_role = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $pdo = null;
+
+            return ($id_role['id_role'] == 2) ? true : false;
+
+        } catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
+            die();
+        }
+    }
+
+    public function getUsers() {
+        $pdo = $this->database->connect();
+
+        try {
+
+            $stmt = $pdo->prepare("SELECT * FROM user WHERE id_role=1");
+            $stmt->execute();
+
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $pdo = null;
+
+            return $users;
+
+        } catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
+            die();
+        }
+    }
+
+    public function deleteUser($id) {
+        $pdo = $this->database->connect();
+
+        try {
+
+            $stmt = $pdo->prepare("DELETE FROM team WHERE id_user=:id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $stmt = $pdo->prepare("DELETE FROM user WHERE id_user=:id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pdo = null;
+
         } catch (PDOException $e) {
             echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
             die();

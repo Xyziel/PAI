@@ -1,0 +1,51 @@
+.mainContainer {
+    background-image: url("../Images/repeated-square.png");
+}
+
+.mainContainer > button {
+    margin-top: 2em;
+    margin-left: 5%;
+    margin-bottom: 1em;
+    height: 2em;
+    width: 10em;
+    border-radius: 15px;
+    background-color: #d43422;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.mainContainer button:hover {
+    background-color: #d15547;
+}
+
+.tableScroll {
+    max-height: 1000px;
+    overflow: auto;
+    width: 50%;
+    margin-left: 5%;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+th:last-child {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .tableScroll {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .tableScroll {
+        width: 90%;
+    }
+
+}

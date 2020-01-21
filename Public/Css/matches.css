@@ -143,3 +143,20 @@ td:not(.address):not(.city) {
     height: 20px;
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .infoContainer {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2em;
+    }
+
+    .leftSide {
+        width: 100%;
+    }
+
+    .rightSide {
+        margin-top: 4em;
+        width: 80%;
+    }
+}

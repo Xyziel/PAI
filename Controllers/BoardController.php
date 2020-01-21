@@ -13,20 +13,26 @@ class BoardController extends AppController {
             $this->renderPage('home');
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
     }
 
     public function loadProfile() {
 
         if (!$this->isPost() and isset($_SESSION['id'])) {
+            $userRepository = new UserRepository();
+            if ($userRepository->isAdmin($_SESSION['id'])) {
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=admin_panel");
+                return;
+            }
+
+            $user = $userRepository->getUser($_SESSION['id']);
 
             if (!isset($_SESSION['fileError'])) {
                 $_SESSION['fileError'] = null;
             }
-
-            $userRepository = new UserRepository();
-            $user = $userRepository->getUser($_SESSION['id']);
             $this->renderPage('profile', ['name' => $user->getName(),
                                                 'surname' => $user->getSurname(),
                                                 'age' => $user->getAge(),
@@ -39,11 +45,12 @@ class BoardController extends AppController {
 
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
     }
 
-    public function loadreferees() {
+    public function loadReferees() {
 
         if (isset($_SESSION['id'])) {
             $refereeRepository = new RefereeRepository();
@@ -51,7 +58,8 @@ class BoardController extends AppController {
             $this->renderPage('referees', ['referees' => $referees]);
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
 
 
@@ -62,7 +70,35 @@ class BoardController extends AppController {
             $this->renderPage('contact');
         }
         else {
-            $this->renderPage('login');
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
+    public function sendEmail() {
+        if (isset($_SESSION['id'])) {
+            if ($this->isPost()) {
+                $toEmail = 'mixballcompany@gmail.com';
+                $subject = $_POST['subject'];
+                $message = $_POST['message'];
+                $header = 'From: '.$_SESSION['id'];
+
+                mail($toEmail, $subject, $message, $header);
+            }
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
+    public function loadAbout() {
+        if (isset($_SESSION['id'])) {
+            $this->renderPage('about');
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
         }
     }
 }

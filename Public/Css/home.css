@@ -43,6 +43,10 @@ a {
     background-color: #73b8d9;
 }
 
+.menuTrigger {
+    margin-top: 0.2em;
+}
+
 @media only screen and (max-width: 1050px) {
     .textAndButton {
         left: 0;

@@ -9,7 +9,7 @@ class MatchRepository extends Repository {
         $pdo = $this->database->connect();
 
         try {
-            $stmt = $pdo->prepare("SELECT address.*, `match`.* FROM `match` INNER JOIN address ON match.id_address=address.id_address");
+            $stmt = $pdo->prepare("SELECT * FROM matches");
             $stmt->execute();
             $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -73,7 +73,7 @@ class MatchRepository extends Repository {
 
             $stmt = $pdo->prepare("SELECT user_details.name, user_details.surname from user_details where id_user_details in (SELECT user.id_user_details from user where user.id_user in (SELECT id_user from team where id_match=:idMatch))");
             $stmt->bindParam(':idMatch', $idMatch, PDO::PARAM_INT);
-
+//            SELECT referee.name, referee.surname FROM referee INNER JOIN `match` ON MATCH.id_referee = referee.id_referee WHERE MATCH.id_match = 6
             $stmt->execute();
             $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $playersRows = $stmt->rowCount();

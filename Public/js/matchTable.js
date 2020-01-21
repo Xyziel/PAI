@@ -110,7 +110,7 @@ function showDetails() {
     .done((match) => {
         for (var i = 0; i < match.players; i++) {
             if (match[i] != null) {
-                $playersList.append(`<span>${match[i].name} ${match[i].surname}  <button><i class="fas fa-user"></i></button></span><br>`)
+                $playersList.append(`<span>${match[i].name} ${match[i].surname}</span><br>`)
             }
         }
         $matchDetails.append(`<span>Id: ${match.id_match}</span><br>
